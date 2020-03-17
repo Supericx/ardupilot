@@ -122,7 +122,7 @@ if [ -n "$RP" ]; then
 fi
 
 $APT_GET install $BASE_PKGS $SITL_PKGS $PX4_PKGS $ARM_LINUX_PKGS
-pip2 -q install --user -U $PYTHON_PKGS
+
 
 
 if [ ! -d $OPT/$ARM_ROOT ]; then
@@ -161,6 +161,5 @@ apt-cache search arm-none-eabi
 
 (
  cd $ARDUPILOT_ROOT
- git submodule update --init --recursive
 )
 echo "---------- $0 end ----------"
