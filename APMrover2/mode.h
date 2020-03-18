@@ -691,16 +691,16 @@ public:
     void update() override;
 
     //return if in non-manual mode: ATUO, GUIDED, RTL
-    virtual bool is_autopilot_mode() const { return false;}
+    //virtual bool is_autopilot_mode() const { return false; }
 
     //returns true if steering is directly controlled by RC
-    virtual bool manual_steering() const { return false;}
+    //virtual bool manual_steering() const { return false;}
 
-    virtual bool auto_throttle() {return is_autopilot_mode();}
+    //virtual bool auto_throttle() {return is_autopilot_mode();}
 
-protected:
-    bool _enter() override;
-    void _exit() override;
+//protected:
+    //bool _enter() override;
+    //void _exit() override;
 
 
 };
