@@ -26,6 +26,7 @@ public:
         LOITER       = 5,
         FOLLOW       = 6,
         SIMPLE       = 7,
+        STUPIDPIXHAWK = 8,
         AUTO         = 10,
         RTL          = 11,
         SMART_RTL    = 12,
@@ -679,3 +680,27 @@ private:
     float _desired_heading_cd;  // latest desired heading (in centi-degrees) from pilot
 };
 
+class ModeSTUPIDPIXHAWK : public Mode
+{
+public:
+
+    uint32_t mode_number() const override { return STUPIDPIXHAWK; }
+    const char *name4() const override { return "SPIXHAWK"; }
+
+    // methods that affect movement of the vehicle in this mode
+    void update() override;
+
+    //return if in non-manual mode: ATUO, GUIDED, RTL
+    virtual bool is_autopilot_mode() const { return false;}
+
+    //returns true if steering is directly controlled by RC
+    virtual bool manual_steering() const { return false;}
+
+    virtual bool auto_throttle() {return is_autopilot_mode();}
+
+protected:
+    bool _enter() override;
+    void _exit() override;
+
+
+};
