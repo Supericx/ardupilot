@@ -135,3 +135,10 @@ We will be using Pixhawk with fmuv2. So let's configure waf first.
 $ ./waf configure --board fmuv2
 ```
 
+now since we will be using only the APMrover vehicle, we can build it directly.
+
+```sh
+$ waf build rover
+```
+check the folder, there should be some binary files in *ardupilot/build/fmuv2/bin*
+
