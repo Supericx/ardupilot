@@ -49,7 +49,7 @@ Now that you have install git. We need to "download" our source code.
     2. type in:  
     ```sh
     $ git --config http.proxy http://127.0.0.1:12333
-    % git --config https.proxy https://127.0.0.1:12333
+    $ git --config https.proxy https://127.0.0.1:12333
     ```  
     The clone speech should be over 1MB/s. Check this step if it is taking more than it should to clone the repository.  
 
