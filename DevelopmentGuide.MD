@@ -92,4 +92,46 @@ git submodule update --init --recursive
 ```
 2. If the speed is too slow or it is not connecting to the server, please see the "Change the submodule update link", and make sure everything is done correctly.
 
-## 5. D
+## 5. Download VS Code
+Go to https://code.visualstudio.com/download and download the .deb installation file for VS Code, then double click to install. In this guide we will use QGroundControl as an example.  
+
+## 6. Ground Control Station(GCS)
+There are a few options of ground station for ardupilot. 
+*   **Mission Planner**  
+Supported platform: Windows, Mac OSX(using Mono)
+License: Open Source(GPLv3)
+*   **QGroundControl**  
+Supported platform: Windows, Mac OS X, Linux, Android and iOS
+License: Open Source(GPLv3)
+*   **APM Planner 2.0**  
+Supported platform: Windows, Mac OS X, Linux
+License: Open Source(GPLv3)
+
+Before installing QGroundControl for the first time:  
+1. In command prompt center
+```sh
+$ sudo usermod -a -G dialout $USER
+$ sudo apt-get remove modemmanager -y
+$ sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav -y
+```
+2. Logout and login to enable the change in user permssion.  
+3. Download the [QGroundControl.AppImage][1]
+
+[1]:https://s3-us-west-2.amazonaws.com/qgroundcontrol/latest/QGroundControl.AppImage
+
+4. In terminal 
+```sh
+chmod +x ./QGroundControl.AppImage
+```
+Double click that app image and it should be fine to go.  
+
+## 7. Build the code
+We will be using waf in this documentation to compile the source code. For people that have never compiles code before, there are some basic ideas of what is happeneing.  
+
+So our source code needs to be converted into some executable files for the board to run it. In our case, waf will need to understand what board we are using to properly compile the code.
+
+We will be using Pixhawk with fmuv2. So let's configure waf first.
+```sh
+$ ./waf configure --board fmuv2
+```
+
