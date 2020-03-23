@@ -1,7 +1,7 @@
 # DEVELOPMENT GUIDE #
 
 ## Basic Usage ##
-STUPIDPIXHAWK is for helping stupid people to use pixhawk as a platform for whatever usage. Simplily try to follow this guide. If you are having trouble understanding or implementing our document, it probably means that your intellengence is below average and do not hesitage to call us at +86 wsbwsbwsbbwsb or email me at wsbking@wsb.com.
+(null)
 
 
 
